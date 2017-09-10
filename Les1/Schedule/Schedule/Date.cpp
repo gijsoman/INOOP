@@ -8,9 +8,9 @@ Date::Date()
 
 Date::Date(Day d, Month m, Year y)
 {
-	day = d;
-	month = m;
-	year = y;
+	day = d.val;
+	month = m.val;
+	year = y.val;
 }
 
 

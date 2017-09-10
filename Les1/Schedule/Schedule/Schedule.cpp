@@ -5,14 +5,16 @@
 #include <iostream>
 
 #include "Date.h"
+#include "Year.h"
+#include "Month.h"
+#include "Day.h"
 
 int main()
 {
+	int i;
+	Date* d = new Date(Day::SetDay(29), Month::November(), Year(2017));
 
-	Date* d = new Date();
-	int i = 0;
+	std::cout << d->day << "|" << d->month << "|" << d->year;
 	std::cin >> i;
-
     return 0;
 }
-

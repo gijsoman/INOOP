@@ -6,6 +6,11 @@ Year::Year()
 {
 }
 
+Year::Year(int year)
+{
+	val = year;
+}
+
 
 Year::~Year()
 {

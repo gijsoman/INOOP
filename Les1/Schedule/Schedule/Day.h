@@ -3,8 +3,11 @@ class Day
 {
 public:
 	Day();
+	Day(int day);
 	~Day();
 
-	int day;
+	int val;
+
+	static Day SetDay(int input);
 };
 

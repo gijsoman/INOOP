@@ -3,8 +3,9 @@ class Year
 {
 public:
 	Year();
+	Year(int year);
 	~Year();
 
-	int year;
+	int val;
 };
 
