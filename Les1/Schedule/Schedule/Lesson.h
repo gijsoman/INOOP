@@ -15,7 +15,7 @@ public:
 
 	Clas clas;
 	Teacher teacher;
-	Rooms room;
+	Room room;
 	Time time;
 	Subject subject;
 	Date date;

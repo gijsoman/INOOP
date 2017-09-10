@@ -1,12 +1,17 @@
-#pragma once
+#pragma 
+
+#include "Year.h"
+#include "Month.h"
+#include "Day.h"
 class Date
 {
 public:
 	Date();
+	Date(Day d, Month m, Year y);
 	~Date();
 
-	int dateDay;
-	int dateYear;
-	int dateMonth;
+	Day day;
+	Month month;
+	Year year;
 };
 

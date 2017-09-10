@@ -3,11 +3,11 @@
 
 //Rooms gives you the roomnumber where your lessons can take place.
 
-Rooms::Rooms()
+Room::Room()
 {
 }
 
 
-Rooms::~Rooms()
+Room::~Room()
 {
 }

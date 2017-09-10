@@ -1,10 +1,13 @@
 #pragma once
-class Rooms
+
+#include "School.h"
+class Room
 {
 public:
-	Rooms();
-	~Rooms();
+	Room();
+	~Room();
 
 	int roomNumber;
+	School school;
 };
 
