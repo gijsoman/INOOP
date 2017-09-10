@@ -1,0 +1,69 @@
+Objecten waar rooster uit bestaat:
+	- klassen
+	- vakken
+	- Docenten
+	- lokalen
+	- Datum
+	- Tijd 
+	- Richting
+	- Les
+	- Rooster
+
+Variabelen voor klassen:
+	- klasNaam
+
+Variabelen voor vakken:
+	- vakNaam
+
+Variabelen voor docenten:
+	- docentNaam
+
+Variabelen voor lokalen:
+	- lokaalNummer
+
+Variabelen voor datum:
+	- lesDag
+	- lesMaand
+	- lesJaar
+
+Variabelen voor tijd:
+	- lesTijdStart
+	- lesTijdEnd
+
+Variabelen voor les:
+	- klas
+	- vak
+	- datum
+	- lokaal
+	- tijd
+	- docent
+
+Variabelen voor rooster:
+	- les
+
+Relaties
+	- Bepaalde docenten kunnen maar bepaalde vakken geven
+	- Een les heeft altijd alle andere objecten nodig om een 	 	  les te kunnen zijn.
+	- Een rooster heeft lessen nodig met zijn eigenschappen om 	  een rooster te kunnen zijn.
+
+Ik heb het gevoel dat ik een database nodig heb waar in ik relaties kan maken met welke docent welk vak kan geven etc. Ik denk dat ik te moeilijk denk. Het voelt namelijk alsof ik tabellen aan het maken ben. Ik weet nou ook niet zo goed of ik van variabelen objecten heb gemaakt of dat ze gewoon als variabelen gemaakt kunnen worden. Hieronder nog een tweede optie waarvan me lijkt dat hij mogelijk is.
+
+
+Objecten waar het rooster uit bestaat:
+	- Lesson
+	- DateTime
+	
+Variabelen Lesson
+	- lessonName
+	- lessonRoom
+	- lessonClass
+	- lessonTeacher
+
+Variabelen voor DateTime
+	- dateYear
+	- dateMonth
+	- dateDay
+	- dateBeginTime
+	- dateEndTime
+
+De tweede optie lijkt makkelijker en minder werk maar ik weet niet of deze efficiënter is. Het lijkt er op dat ik meer ga leren dan ik in eerste instantie had verwacht. NICE!
