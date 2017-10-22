@@ -11,26 +11,29 @@ Bibliotheek::Bibliotheek(std::string filiaal) : filiaal(filiaal)
 {
 }
 
-Bibliotheek::Bibliotheek(const Bibliotheek* bieb, std::string filiaal) : filiaal(filiaal)
+Bibliotheek::Bibliotheek(const Bibliotheek& copy)
 {
-	std::cout << "Bibliotheek: copy-ctor" << std::endl;
-	boekjes = bieb->boekjes;
-
-	//omslachtige eerste versie
-	//for (int i = 0; i < bieb.boekjes.size(); i++)
-	//{
-	//	boekjes.push_back(bieb.boekjes[i]);
-	//}
+	filiaal = "nieuw filiaal";
+	std::cout << "Wij openen een nieuw filiaal en hebben dezelfde boeken als: " << copy.filiaal << std::endl;
+	//We maken hier nieuwe pointers aan naar nieuwe boeken zodat we 
+	//een deep copy uitvoeren. We hebben nu eigen pointers naar eigen boeken.
+	//Deze pointers worden opgeruimt zodra we de destructor van bibliotheek
+	//aanroepen.
+	for (int  i = 0; i < copy.boekjes.size(); i++)
+	{
+		Boek* boekje = new Boek(copy.boekjes[i]->naam);
+		boekjes.push_back(boekje);
+	}
 }
 
-Bibliotheek &Bibliotheek::operator=(const Bibliotheek* andereBieb)
+Bibliotheek &Bibliotheek::operator=(const Bibliotheek& andereBieb)
 {
-	std::cout << "Lekker assignen" << std::endl;
-	if (this != andereBieb) 
+	std::cout << "Het filiaal: " << andereBieb.filiaal << " is aan ons toegewezen." << std::endl;
+	if (this != &andereBieb) 
 	{
-		for (int i = 0; i < andereBieb->boekjes.size(); i++)
+		for (int i = 0; i < andereBieb.boekjes.size(); i++)
 		{
-			Boek* boekje = new Boek(andereBieb->boekjes[i]->naam);
+			Boek* boekje = new Boek(andereBieb.boekjes[i]->naam);
 			boekjes.push_back(boekje);
 		}
 	}
@@ -40,6 +43,7 @@ Bibliotheek &Bibliotheek::operator=(const Bibliotheek* andereBieb)
 
 Bibliotheek::~Bibliotheek()
 {
+	std::cout << "Het filiaal: " << filiaal << " is gesloten" << std::endl;
 	for (int i = 0; i < boekjes.size(); i++)
 	{
 		delete boekjes[i];

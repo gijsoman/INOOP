@@ -8,14 +8,14 @@ class Bibliotheek
 public:
 	Bibliotheek();
 	Bibliotheek(std::string filiaal);
-	Bibliotheek(const Bibliotheek* bieb, std::string filiaal);
-	Bibliotheek& operator=(const Bibliotheek*);
+	Bibliotheek(const Bibliotheek& copy);
+	Bibliotheek& operator=(const Bibliotheek& andereBieb);
 	virtual ~Bibliotheek();
 
 	void toon();
 	void voegToe(std::string name);
 
-	std::string filiaal;
+	std::string filiaal = "onbekend";
 private:
 	std::vector<Boek*> boekjes;
 

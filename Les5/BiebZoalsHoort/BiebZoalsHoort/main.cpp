@@ -24,23 +24,23 @@ int main()
 	almelo.voegToe("Het kamertje in het kasteel in het duistere bos"); 
 	almelo.toon();
 
-	// Het gewoon opvragen van copyconstructor
-	// Bibliotheek hengelo = almelo;
-	//copy constructor met nieuwe naam (deep copy volgens mij omdat we in de constructor pointen naar het adres van almelo)
-	Bibliotheek hengelo(&almelo, "hengelo");
+	
+	//we roepen de copy constructor aan om een nieuwe bieb te maken 
+	//deze nieuwe bieb gaan we vullen met nieuwe pointers naar nieuwe boeken
+	//als we namelijk de pointers in de lijst van almelo pakken dan proberen
+	//we memory te lezen waar geen boeken meer zijn.
+	Bibliotheek hengelo = almelo;
+	almelo.~Bibliotheek();
+	hengelo.filiaal = "hengelo";
 	hengelo.toon();
 	
-	//als laatste gaan we assigenen maar voordat we dat doen gebruiken we de gewone constructor om een naam mee te geven.
-	//Ook deze copy is deep omdat we pointen naar het adres van hengelo
+	
+	//vervolgens roepen we de assignment operator aan.
+	//we assignen alles van hengelo aan enschede :)
 	Bibliotheek enschede("enschede");
-	enschede = &hengelo;
+	enschede = hengelo;
 	enschede.toon();
 
-	almelo.voegToe("Hoe te werken met pointers in c++");
-
-	almelo.toon();
-	hengelo.toon();
-	enschede.toon();
 
 	char c;
 	std::cin >> c;
