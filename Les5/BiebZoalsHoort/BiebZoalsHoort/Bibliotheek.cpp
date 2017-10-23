@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Bibliotheek.h"
-
+#include <vector>
 
 
 Bibliotheek::Bibliotheek()
@@ -31,16 +31,22 @@ Bibliotheek &Bibliotheek::operator=(const Bibliotheek& andereBieb)
 	std::cout << "Het filiaal: " << andereBieb.filiaal << " is aan ons toegewezen." << std::endl;
 	if (this != &andereBieb) 
 	{
-		//eerst maken we een integer waar we de size in op kunnen slaan.
-		//Deze gaat namelijk veranderen als we de array leeg gaan gooien.
+		std::vector<Boek*>::iterator iter;
+		//we willen eerst de pointers weggooien en de objecten waarnaar gewezen worden door deze
+		//pointers door "Delete" te gebruiken. We deacllocaten dus eerst het geheugen waar de pointer
+		//naartoe wijst. 
+		for (iter = boekjes.begin(); iter != boekjes.end(); iter++)
+		{
+			delete *iter;
+		}
+		//vervolgens halen we de pointers uit de vector. Dit mag nu omdat we de objecten waar de pointers
+		//naar wezen nu ook verwijdert (deallocated) zijn.
 		int vectorSize = boekjes.size();
-		//we moeten eerst boekjes leegmaken anders krijgen we dubbele boekjes
 		for (int i = 0; i < vectorSize; i++)
 		{
-			//verijderd niet alleen heet laatste element in de lijst maar maakt hem ook kapot.
-			//geen zwervende pointers dus?
 			boekjes.pop_back();
 		}
+		//dan pas voegen we de nieuwe boeken toe.
 		for (int i = 0; i < andereBieb.boekjes.size(); i++)
 		{
 			Boek* boekje = new Boek(andereBieb.boekjes[i]->naam);
