@@ -41,6 +41,11 @@ int main()
 	enschede = hengelo;
 	enschede.toon();
 
+	//We gaan nu 2 bestaande bibliotheken aan elkaar assignen. 
+	//De boeken zullen bij elkaar worden opgeteld maar dat willen we niet
+	hengelo = enschede;
+	hengelo.toon();
+
 
 	char c;
 	std::cin >> c;
